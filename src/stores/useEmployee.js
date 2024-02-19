@@ -14,6 +14,7 @@ export const useEmployeeStore = defineStore('employee', {
       try {
         this.isLoading = true;
         this.employees = await fetchWrapper.get(employeeUrl);
+        // console.log("임직원 조회", employees);
       } catch (error) {
         console.log(error);
       } finally {
@@ -25,6 +26,7 @@ export const useEmployeeStore = defineStore('employee', {
       try {
         this.isLoading = true;
         const newEmployee = await fetchWrapper.post(employeeUrl, employee);
+        // console.log("임직원 추가", newEmployee);
         this.employees.push(newEmployee);
       } catch (error) {
         console.log(error);

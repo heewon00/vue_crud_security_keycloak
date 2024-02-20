@@ -20,5 +20,5 @@ ENV BACKEND_API_URL backend.svc.keycloak
 # ENV BACKEND_API_URL backend
 RUN sed -i "s|backend_host|$BACKEND_API_URL|g" -i /etc/nginx/conf.d/default.conf
 
-EXPOSE 3000
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

@@ -8,9 +8,6 @@ COPY . .
 COPY nginx.conf ./
 RUN npm run build
 
-# env 추가
-COPY .env.dev .env
-
 # production stage
 FROM nginx:stable-alpine as production-stage
 COPY --from=build-stage /app/dist /usr/share/nginx/html
